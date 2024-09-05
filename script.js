@@ -7,7 +7,7 @@
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
  });
 
- var googleSatelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x=%7Bx%7D&y=%7By%7D&z=%7Bz%7D', {
+ var googleSatelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs%3Ds%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0&type=xyz', {
      maxZoom: 20,
      attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
  });
