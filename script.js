@@ -7,14 +7,14 @@
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
  });
 
- var googleSatelliteHybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+ var googleSatelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs%3Ds%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D', {
      maxZoom: 20,
      attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
  });
 
  var baseMaps = {
      "OpenStreetMap": osmLayer,
-     "Google Satellite Hybrid": googleSatelliteHybridLayer
+     "Google Satellite": googleSatelliteLayer
  };
 
  L.control.layers(baseMaps).addTo(map);
