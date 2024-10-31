@@ -6,16 +6,31 @@
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         });
-
-        var googleSatelliteHybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+       // Define Google Maps base layer
+        var googleMapsLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
             maxZoom: 20,
             attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
         });
 
-        var baseMaps = {
-            "OpenStreetMap": osmLayer,
-            "Google Satellite Hybrid": googleSatelliteHybridLayer
-        };
+       // Define Google Satellite base layer
+        var googleSatelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+           maxZoom: 20,
+           attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
+        });
+ 
+       // Define Google Satellite Hybrid base layer
+       var googleSatelliteHybridLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+           maxZoom: 20,
+           attribution: '&copy; <a href="https://maps.google.com">Google Maps</a>'
+       });
+
+// Base maps object for layer control
+var baseMaps = {
+    "OpenStreetMap": osmLayer,
+    "Google Maps":googleMapsLayer,
+    "Google Satellite": googleSatelliteLayer,
+    "Google Satellite Hybrid": googleSatelliteHybridLayer
+};
 
         L.control.layers(baseMaps).addTo(map);
 
@@ -24,9 +39,6 @@
 
         // Array of locations
         var locations = [
-            {lat: 14.5995, lng: 120.9842, title: 'Gas Station 1', description: 'This is Gas Station 1.'},
-            {lat: 14.6095, lng: 120.9942, title: 'Gas Station 2', description: 'This is Gas Station 2.'},
-            {lat: 14.6195, lng: 121.0042, title: 'Gas Station 3', description: 'This is Gas Station 3.'},
             {lat: 13.1446, lng: 123.7231, title: 'BICOL UNIVERSITY', description: 'This is BU MAIN CAMPUS.'}
         ];
 
